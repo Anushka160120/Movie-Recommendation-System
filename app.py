@@ -15,7 +15,7 @@ def recommend(movie):
 movies_dict = pickle.load(open('movie_dict.pkl','rb'))
 movies=pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('similarity.pkl','rb'))
+similarity = pickle.load(open('similarity_dict.pkl','rb'))
 
 st.title('Movie Recommender System')
 
@@ -27,6 +27,7 @@ if st.button('Recommend'):
     recommendations = recommend(selected_movie_name)
     for i in recommendations:
         st.write(i)
+
 
 
 
